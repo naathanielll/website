@@ -60,8 +60,8 @@ import officers from '../data/officers.json';
             </div>
           </div>
 
-          <!-- Events Link -->
-          <a href="#announcements" class="px-3 py-2 rounded-lg hover:text-[#FFC72A] hover:bg-[#190e2b] transition">
+          <!-- Events Link (Points to dedicated /events page) -->
+          <a href="/events" class="px-3 py-2 rounded-lg hover:text-[#FFC72A] hover:bg-[#190e2b] transition">
             Events
           </a>
 
@@ -131,7 +131,8 @@ import officers from '../data/officers.json';
           <a href="/" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
             Home
           </a>
-          <a href="#announcements" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
+          <!-- Mobile Events Link -->
+          <a href="/events" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
             Events
           </a>
         </div>
@@ -201,59 +202,12 @@ import officers from '../data/officers.json';
             Become a Member
           </a>
           <a 
-            href="#announcements" 
+            href="/events" 
             class="px-6 py-3 rounded-xl bg-[#190e2b] border border-[#5F259F]/50 text-purple-100 font-semibold hover:border-[#FFC72A]/50 hover:bg-[#23143a] transition text-sm"
           >
-            Upcoming Events
+            Upcoming Events Calendar →
           </a>
         </div>
-      </section>
-
-      <!-- Collapsible Google Events Calendar Section -->
-      <section id="announcements" class="space-y-4">
-        <details class="group rounded-3xl bg-[#190e2b]/70 border border-[#5F259F]/40 p-6 transition-all duration-300 open:pb-8 open:shadow-2xl" open>
-          
-          <!-- Dropdown Trigger Header -->
-          <summary class="flex items-center justify-between cursor-pointer list-none select-none">
-            <div class="flex items-center gap-3">
-              <span class="p-2.5 rounded-xl bg-[#5F259F]/50 border border-[#FFC72A]/30 text-[#FFC72A]">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </span>
-              <div>
-                <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#FFC72A] transition">
-                  Events Calendar
-                </h2>
-                <p class="text-xs text-neutral-400">Click to expand or collapse upcoming events</p>
-              </div>
-            </div>
-
-            <!-- Rotating Chevron Arrow -->
-            <div class="p-2 rounded-xl bg-[#0e0716]/60 border border-[#5F259F]/30 text-neutral-300 group-open:rotate-180 transition-transform duration-300">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </summary>
-
-          <!-- Embedded Calendar -->
-          <div class="mt-6 pt-6 border-t border-[#5F259F]/30">
-            <div class="rounded-2xl overflow-hidden border border-[#5F259F]/40 bg-white shadow-inner">
-              <iframe 
-                src="https://calendar.google.com/calendar/embed?src=9a06d51ed8d4cb33b140c5ac9a04842c7e21d43268567ecc26524e4702ede255%40group.calendar.google.com&ctz=America%2FNew_York" 
-                style="border: 0" 
-                class="w-full h-[550px] sm:h-[650px]" 
-                frameborder="0" 
-                scrolling="no"
-                loading="lazy"
-              ></iframe>
-            </div>
-            <p class="text-[11px] text-neutral-400 text-center mt-3">
-              Events update automatically. Add them to your personal calendar directly from the view.
-            </p>
-          </div>
-        </details>
       </section>
 
       <!-- Executive Board Section -->
