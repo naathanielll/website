@@ -1,7 +1,6 @@
 ---
 // src/pages/index.astro
 import '../styles/global.css';
-import announcements from '../data/announcements.json';
 import officers from '../data/officers.json';
 ---
 
@@ -51,7 +50,7 @@ import officers from '../data/officers.json';
                 <a href="/vita/program-overview" class="block px-3 py-2 rounded-lg text-xs font-semibold text-purple-100 hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
                   Program Overview
                 </a>
-                <a href="/vita/vita-eboard" class="block px-3 py-2 rounded-lg text-xs font-semibold text-purple-100 hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
+                <a href="/vita/vita-eboard2" class="block px-3 py-2 rounded-lg text-xs font-semibold text-purple-100 hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
                   VITA E-Board
                 </a>
                 <a href="/vita/client-tax" class="block px-3 py-2 rounded-lg text-xs font-semibold text-purple-100 hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
@@ -143,7 +142,7 @@ import officers from '../data/officers.json';
           <a href="/vita/program-overview" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">
             • Program Overview
           </a>
-          <a href="/vita/vita-eboard" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">
+          <a href="/vita/vita-eboard2" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">
             • VITA E-Board
           </a>
           <a href="/vita/client-tax" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">
@@ -210,21 +209,51 @@ import officers from '../data/officers.json';
         </div>
       </section>
 
-      <!-- Announcements Section -->
-      <section id="announcements" class="space-y-6">
-        <div class="flex items-center justify-between border-b border-[#5F259F]/30 pb-3">
-          <h2 class="text-2xl font-bold tracking-tight text-white">Announcements & Events</h2>
-          <span class="text-xs text-[#FFC72A] font-semibold uppercase tracking-wider">Fall 2026 Semester</span>
-        </div>
-        <div class="space-y-4">
-          {announcements.map((item) => (
-            <div class="p-6 rounded-2xl bg-[#190e2b]/60 border border-[#5F259F]/30 hover:border-[#FFC72A]/40 transition space-y-2">
-              <span class="text-xs font-semibold text-[#FFC72A] tracking-wide uppercase">{item.date}</span>
-              <h3 class="text-lg font-bold text-white">{item.title}</h3>
-              <p class="text-sm text-neutral-300 leading-relaxed">{item.details}</p>
+      <!-- Collapsible Google Events Calendar Section -->
+      <section id="announcements" class="space-y-4">
+        <details class="group rounded-3xl bg-[#190e2b]/70 border border-[#5F259F]/40 p-6 transition-all duration-300 open:pb-8 open:shadow-2xl" open>
+          
+          <!-- Dropdown Trigger Header -->
+          <summary class="flex items-center justify-between cursor-pointer list-none select-none">
+            <div class="flex items-center gap-3">
+              <span class="p-2.5 rounded-xl bg-[#5F259F]/50 border border-[#FFC72A]/30 text-[#FFC72A]">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </span>
+              <div>
+                <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#FFC72A] transition">
+                  Events Calendar
+                </h2>
+                <p class="text-xs text-neutral-400">Click to expand or collapse upcoming events</p>
+              </div>
             </div>
-          ))}
-        </div>
+
+            <!-- Rotating Chevron Arrow -->
+            <div class="p-2 rounded-xl bg-[#0e0716]/60 border border-[#5F259F]/30 text-neutral-300 group-open:rotate-180 transition-transform duration-300">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </summary>
+
+          <!-- Embedded Calendar -->
+          <div class="mt-6 pt-6 border-t border-[#5F259F]/30">
+            <div class="rounded-2xl overflow-hidden border border-[#5F259F]/40 bg-white shadow-inner">
+              <iframe 
+                src="https://calendar.google.com/calendar/embed?src=vrhb1b4ismiim6teof18nlolms%40group.calendar.google.com&ctz=America%2FNew_York" 
+                style="border: 0" 
+                class="w-full h-[550px] sm:h-[650px]" 
+                frameborder="0" 
+                scrolling="no"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <p class="text-[11px] text-neutral-400 text-center mt-3">
+              Events update automatically. Add them to your personal calendar directly from the view.
+            </p>
+          </div>
+        </details>
       </section>
 
       <!-- Executive Board Section -->
@@ -243,7 +272,7 @@ import officers from '../data/officers.json';
                 <a 
                   href={officer.linkedin} 
                   target="_blank" 
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer" 
                   class="absolute top-3 right-3 text-neutral-400 hover:text-[#FFC72A] transition"
                   title={`${officer.name}'s LinkedIn`}
                 >
@@ -277,15 +306,15 @@ import officers from '../data/officers.json';
       <section id="resources" class="space-y-6">
         <h2 class="text-2xl font-bold tracking-tight text-white border-b border-[#5F259F]/30 pb-3">Useful Links</h2>
         <div class="grid sm:grid-cols-3 gap-4">
-          <a href="https://hunter.cuny.edu" target="_blank" class="p-5 rounded-2xl bg-[#190e2b]/40 border border-[#5F259F]/30 hover:border-[#FFC72A]/50 transition block">
+          <a href="https://hunter.cuny.edu" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-[#190e2b]/40 border border-[#5F259F]/30 hover:border-[#FFC72A]/50 transition block">
             <h3 class="text-base font-bold text-white mb-1">Hunter Catalog</h3>
             <p class="text-xs text-neutral-400">Official Hunter degree roadmaps and prerequisites.</p>
           </a>
-          <a href="https://www.nasba.org" target="_blank" class="p-5 rounded-2xl bg-[#190e2b]/40 border border-[#5F259F]/30 hover:border-[#FFC72A]/50 transition block">
+          <a href="https://www.nasba.org" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-[#190e2b]/40 border border-[#5F259F]/30 hover:border-[#FFC72A]/50 transition block">
             <h3 class="text-base font-bold text-white mb-1">NASBA Portal</h3>
             <p class="text-xs text-neutral-400">New York State CPA exam credit requirements and licensing.</p>
           </a>
-          <a href="https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers" target="_blank" class="p-5 rounded-2xl bg-[#190e2b]/40 border border-[#5F259F]/30 hover:border-[#FFC72A]/50 transition block">
+          <a href="https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-[#190e2b]/40 border border-[#5F259F]/30 hover:border-[#FFC72A]/50 transition block">
             <h3 class="text-base font-bold text-white mb-1">IRS VITA Program</h3>
             <p class="text-xs text-neutral-400">Federal guidelines and client qualification thresholds.</p>
           </a>
