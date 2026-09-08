@@ -5,18 +5,18 @@ import '../styles/global.css';
 const slides = [
   {
     image: "/slides/slide-1.jpg",
-    title: "",
-    caption: ""
+    title: "General Interest Meetings & Events",
+    caption: "Connect with fellow accounting majors and explore upcoming workshops"
   },
   {
     image: "/slides/slide-2.jpg",
-    title: "",
-    caption: ""
+    title: "VITA Tax Preparation Program",
+    caption: "Hands-on tax compliance training and direct community service in NYC"
   },
   {
     image: "/slides/slide-3.jpg",
-    title: "",
-    caption: ""
+    title: "Firm Panels & Recruiter Networking",
+    caption: "Direct recruiting pipelines into public and private accounting"
   }
 ];
 ---
@@ -51,6 +51,26 @@ const slides = [
         <!-- Desktop Navigation Menu -->
         <nav class="hidden lg:flex items-center gap-1 text-sm font-medium text-neutral-300">
           <a href="/" class="px-3 py-2 rounded-lg text-[#FFC72A] bg-[#190e2b]/50">Home</a>
+
+          <!-- E-Board Dropdown -->
+          <div class="relative group py-2">
+            <button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:text-[#FFC72A] hover:bg-[#190e2b] transition">
+              <span>E-Board</span>
+              <svg class="w-3.5 h-3.5 text-neutral-400 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="absolute left-0 top-full pt-1 hidden group-hover:block w-48 z-50">
+              <div class="rounded-xl bg-[#5F259F] border border-[#FFC72A]/40 shadow-2xl p-2 space-y-1">
+                <a href="/eboard/current" class="block px-3 py-2 rounded-lg text-xs font-semibold text-purple-100 hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
+                  Current E-Board
+                </a>
+                <a href="/eboard/past" class="block px-3 py-2 rounded-lg text-xs font-semibold text-purple-100 hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
+                  Past E-Board
+                </a>
+              </div>
+            </div>
+          </div>
 
           <!-- VITA Dropdown -->
           <div class="relative group py-2">
@@ -131,13 +151,21 @@ const slides = [
         </div>
       </div>
 
-      <!-- Mobile Drawer -->
+      <!-- Mobile Navigation Drawer -->
       <div id="mobile-menu" class="hidden lg:hidden border-t border-[#5F259F]/30 bg-[#0e0716] px-6 py-4 space-y-4 max-h-[80vh] overflow-y-auto">
         <div class="space-y-1">
           <a href="/" class="block px-3 py-2 rounded-lg text-sm font-medium hover:bg-[#190e2b] hover:text-[#FFC72A] transition">Home</a>
           <a href="/events" class="block px-3 py-2 rounded-lg text-sm font-medium hover:bg-[#190e2b] hover:text-[#FFC72A] transition">Events</a>
         </div>
 
+        <!-- Mobile E-Board Links -->
+        <div class="space-y-1 pt-2 border-t border-[#5F259F]/20">
+          <span class="px-3 text-[11px] font-bold uppercase tracking-wider text-[#FFC72A]">E-Board</span>
+          <a href="/eboard/current" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">• Current E-Board</a>
+          <a href="/eboard/past" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">• Past E-Board</a>
+        </div>
+
+        <!-- Mobile VITA Links -->
         <div class="space-y-1 pt-2 border-t border-[#5F259F]/20">
           <span class="px-3 text-[11px] font-bold uppercase tracking-wider text-[#FFC72A]">VITA Program</span>
           <a href="/vita/program-overview" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">• Program Overview & Volunteering</a>
@@ -145,6 +173,7 @@ const slides = [
           <a href="/vita/client-tax" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">• Info for Taxpayers</a>
         </div>
 
+        <!-- Mobile Education Links -->
         <div class="space-y-1 pt-2 border-t border-[#5F259F]/20">
           <span class="px-3 text-[11px] font-bold uppercase tracking-wider text-[#FFC72A]">Education</span>
           <a href="/education/cpa-requirements" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">• CPA Requirements</a>
@@ -232,7 +261,7 @@ const slides = [
         </p>
       </section>
 
-      <!-- 3. UPCOMING EVENTS IN NEXT WEEK (With Link to Calendar) -->
+      <!-- 3. UPCOMING EVENTS IN NEXT WEEK -->
       <section class="p-8 sm:p-10 rounded-3xl bg-[#190e2b]/70 border border-[#5F259F]/40 shadow-2xl space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#5F259F]/30 pb-4">
           <div>
@@ -248,13 +277,12 @@ const slides = [
           </a>
         </div>
 
-        <!-- Teaser Event Item -->
         <div class="p-5 rounded-2xl bg-[#0e0716]/60 border border-[#5F259F]/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div class="space-y-1">
-            <span class="text-xs font-semibold text-[#FFC72A] uppercase tracking-wider">Upcoming Event</span>
-            <h3 class="text-base font-bold text-white">Club Fair Tabling</h3>
+            <span class="text-xs font-semibold text-[#FFC72A] uppercase tracking-wider">Next Week Session</span>
+            <h3 class="text-base font-bold text-white">General Interest Meeting & Networking</h3>
             <p class="text-xs sm:text-sm text-neutral-300">
-              Meet current executive board members, learn about the club, and get details on upcoming events.
+              Meet current executive board members, learn about upcoming firm recruiting deadlines, and get details on joining the society.
             </p>
           </div>
           <a 
@@ -266,7 +294,7 @@ const slides = [
         </div>
       </section>
 
-      <!-- 4. VITA PROGRAM PARAGRAPH (With Link) -->
+      <!-- 4. VITA PROGRAM -->
       <section class="p-8 sm:p-10 rounded-3xl bg-[#190e2b]/70 border border-[#5F259F]/40 shadow-2xl space-y-4">
         <div class="space-y-1">
           <span class="text-xs uppercase tracking-wider font-bold text-[#FFC72A]">Community Impact & Experience</span>
@@ -287,7 +315,7 @@ const slides = [
         </div>
       </section>
 
-      <!-- 5. WHY BECOME A CPA & BECOME A MEMBER LINK -->
+      <!-- 5. WHY BECOME A CPA -->
       <section class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#190e2b] via-[#160b28] to-[#0e0716] border border-[#5F259F]/40 shadow-2xl space-y-5">
         <div class="space-y-1">
           <span class="text-xs uppercase tracking-wider font-bold text-[#FFC72A]">Career Advancement</span>
@@ -327,7 +355,7 @@ const slides = [
       <p>© {new Date().getFullYear()} Hunter College Accounting Society. All rights reserved.</p>
     </footer>
 
-    <!-- Client-side Script: Mobile Drawer & Slideshow Controller -->
+    <!-- Client-side Script -->
     <script>
       const btn = document.getElementById('mobile-menu-btn');
       const menu = document.getElementById('mobile-menu');
