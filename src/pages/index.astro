@@ -60,7 +60,7 @@ import officers from '../data/officers.json';
             </div>
           </div>
 
-          <!-- Events Link (Points to dedicated /events page) -->
+          <!-- Events Link -->
           <a href="/events" class="px-3 py-2 rounded-lg hover:text-[#FFC72A] hover:bg-[#190e2b] transition">
             Events
           </a>
@@ -99,7 +99,7 @@ import officers from '../data/officers.json';
           </a>
         </nav>
 
-        <!-- Header Actions (Join Button + Mobile Hamburger) -->
+        <!-- Header Actions -->
         <div class="flex items-center gap-2.5">
           <a 
             href="https://docs.google.com/forms/d/e/1FAIpQLSeUEKzWtcRuj5kBHhk-J9ckwZqmzKj_OCR24RObOFJT5PO_IQ/viewform" 
@@ -109,7 +109,6 @@ import officers from '../data/officers.json';
             Join Society
           </a>
 
-          <!-- Mobile Menu Toggle Button -->
           <button 
             id="mobile-menu-btn" 
             class="lg:hidden p-2 rounded-xl text-neutral-300 hover:text-[#FFC72A] hover:bg-[#190e2b] border border-[#5F259F]/40 transition" 
@@ -131,13 +130,11 @@ import officers from '../data/officers.json';
           <a href="/" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
             Home
           </a>
-          <!-- Mobile Events Link -->
           <a href="/events" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-[#190e2b] hover:text-[#FFC72A] transition">
             Events
           </a>
         </div>
 
-        <!-- Mobile VITA Links -->
         <div class="space-y-1 pt-2 border-t border-[#5F259F]/20">
           <span class="px-3 text-[11px] font-bold uppercase tracking-wider text-[#FFC72A]">VITA Program</span>
           <a href="/vita/program-overview" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">
@@ -151,7 +148,6 @@ import officers from '../data/officers.json';
           </a>
         </div>
 
-        <!-- Mobile Education Links -->
         <div class="space-y-1 pt-2 border-t border-[#5F259F]/20">
           <span class="px-3 text-[11px] font-bold uppercase tracking-wider text-[#FFC72A]">Education</span>
           <a href="/education/cpa-requirements" class="block px-3 py-1.5 rounded-lg text-xs text-neutral-300 hover:bg-[#190e2b] hover:text-white transition">
@@ -207,6 +203,85 @@ import officers from '../data/officers.json';
           >
             Upcoming Events Calendar →
           </a>
+        </div>
+      </section>
+
+      <!-- Why Join & Mission Section -->
+      <section class="p-8 sm:p-10 rounded-3xl bg-[#190e2b]/70 border border-[#5F259F]/40 shadow-2xl">
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+          
+          <!-- Emblem / Logo Column -->
+          <div class="md:col-span-4 flex justify-center">
+            <div class="relative w-44 sm:w-52 p-4 rounded-2xl bg-[#0e0716]/60 border border-[#5F259F]/40 flex items-center justify-center shadow-inner">
+              <img 
+                src="/hunter-hawk.png" 
+                alt="Hunter College Logo" 
+                class="w-full max-h-48 object-contain drop-shadow-[0_10px_20px_rgba(95,37,159,0.35)]"
+                onerror="this.src='/logo.jpg'; this.onerror=null;"
+              />
+            </div>
+          </div>
+
+          <!-- Mission Content Column -->
+          <div class="md:col-span-8 space-y-6">
+            <div class="space-y-1">
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#c084fc] tracking-tight">
+                Why Join?
+              </h2>
+              <div class="w-16 h-1 bg-[#FFC72A] rounded-full"></div>
+            </div>
+
+            <ul class="space-y-3.5 text-xs sm:text-sm text-neutral-200 leading-relaxed">
+              <li class="flex items-start gap-3">
+                <span class="text-[#FFC72A] text-base leading-none mt-0.5 font-bold">▪</span>
+                <span>
+                  Our mission is to educate, foster social interaction among members, alumni, and industry professionals, and provide career opportunities in the accounting profession. New York is the largest hub of financial services in the world and there is significant interest in the industry among Hunter College’s student body.
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="text-[#FFC72A] text-base leading-none mt-0.5 font-bold">▪</span>
+                <span>
+                  <strong>Student-run organization</strong> with over 200 active members.
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="text-[#FFC72A] text-base leading-none mt-0.5 font-bold">▪</span>
+                <span>
+                  Events throughout the semester including networking opportunities, career workshops, and speaker panels—with our largest flagship events bringing together over 100 students.
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="text-[#FFC72A] text-base leading-none mt-0.5 font-bold">▪</span>
+                <span>
+                  Community service initiatives such as the <strong>Volunteer Income Tax Assistance (VITA)</strong> program.
+                </span>
+              </li>
+            </ul>
+
+            <!-- Link to Events Tab Callout -->
+            <div class="p-4 rounded-2xl bg-[#0e0716]/60 border border-[#5F259F]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-inner">
+              <div class="space-y-0.5">
+                <p class="text-xs sm:text-sm font-semibold text-white">
+                  Want to see our upcoming schedule?
+                </p>
+                <p class="text-[11px] text-neutral-400">
+                  Head over to the Events tab to browse meeting dates, workshops, and firm sessions.
+                </p>
+              </div>
+              <a 
+                href="/events" 
+                class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#5F259F] hover:bg-[#742ac4] text-white text-xs font-bold transition whitespace-nowrap shadow-md shadow-[#5F259F]/20"
+              >
+                <span>Check Events Tab</span>
+                <span>→</span>
+              </a>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
