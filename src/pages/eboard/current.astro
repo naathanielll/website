@@ -1,7 +1,7 @@
 ---
 // src/pages/eboard/current.astro
 import '../../styles/global.css';
-import officers from '../../data/officers.json';
+import currentOfficers from '../../data/current-officers.json';
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -39,7 +39,7 @@ import officers from '../../data/officers.json';
       </div>
 
       <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        {officers.map((officer) => (
+        {currentOfficers.map((officer) => (
           <div class="p-5 rounded-2xl bg-[#190e2b]/70 border border-[#5F259F]/40 hover:border-[#FFC72A]/50 transition flex flex-col items-center text-center relative group">
             {officer.linkedin && (
               <a 
@@ -56,10 +56,10 @@ import officers from '../../data/officers.json';
             )}
 
             <img 
-              src={officer.photo} 
+              src={officer.photo || '/logo.png'} 
               alt={officer.name} 
               class="w-20 h-20 rounded-full object-cover border-2 border-[#5F259F] mb-3 bg-[#281344] group-hover:border-[#FFC72A] transition"
-              onerror="this.src='https://via.placeholder.com/150'"
+              onerror="this.src='/logo.png'"
             />
 
             <h3 class="font-bold text-base text-white group-hover:text-[#FFC72A] transition leading-snug">
